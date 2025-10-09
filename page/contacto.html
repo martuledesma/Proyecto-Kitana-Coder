@@ -2,54 +2,152 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kitana — Contacto</title>
 
+  <!-- Bootstrap solo para el navbar -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/styles.css"/>
+  <style>
+    /* ===== Contacto layout con flexbox ===== */
+    .contacto {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;   /* permite que se apilen en mobile */
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .contacto-formulario,
+    .contacto-info {
+      flex: 1 1 300px;   /* mínimo 300px, si no entra se baja */
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .contacto-formulario h1 {
+      color: #d6336c;
+      margin-bottom: 16px;
+      font-family: "DM Serif Display", serif;
+      font-size: 28px;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: .35rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: .5rem .75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .contacto-formulario button {
+      width: 100%;
+      padding: 12px;
+      background: #d6336c;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background .3s;
+    }
+    .contacto-formulario button:hover {
+      background: #b31f52;
+    }
+
+    .contacto-info h2 {
+      font-size: 22px;
+      color: #d6336c;
+      margin-bottom: 12px;
+      font-family: "DM Serif Display", serif;
+    }
+    .info-item {
+      margin-bottom: 10px;
+    }
+    .info-item a {
+      color: #d6336c;
+      text-decoration: none;
+    }
+    .info-item a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
 <header class="encabezado">
-  <a class="logo" href="../index.html">Kitana</a>
-  <nav class="navegacion">
-    <ul>
-      <li><a href="catalogo.html">Catálogo</a></li>
-      <li><a href="sobre.html">Sobre nosotros</a></li>
-      <li><a class="active" href="contacto.html">Contacto</a></li>
-    </ul>
+  <nav class="navbar navbar-expand-lg bg-light w-100 barra-gris">
+    <div class="container-fluid nav-wrap">
+      <a class="navbar-brand logo" href="../index.html">Kitana</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre nosotros</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 </header>
 
 <main>
-  <h1>Contacto</h1>
-  <p>Escribinos para cualquier consulta:</p>
+  <section class="contacto">
+    <!-- Formulario -->
+    <div class="contacto-formulario">
+      <h1>Contacto</h1>
+      <form action="mailto:hola@kitana.com" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
 
-  <form action="mailto:hola@kitana.com" method="post" enctype="text/plain">
-    <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
     </div>
 
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+    <!-- Info -->
+    <div class="contacto-info">
+      <h2>Información</h2>
+      <div class="info-item"><a href="https://wa.me/5493810000000" target="_blank">WhatsApp: +54 9 381 000 0000</a></div>
+      <div class="info-item"><a href="mailto:hola@kitana.com">Email: hola@kitana.com</a></div>
+      <div class="info-item">San Miguel de Tucumán, Argentina</div>
     </div>
-
-    <div class="form-group">
-      <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-    </div>
-
-    <button type="submit">Enviar</button>
-  </form>
+  </section>
 </main>
 
 <footer class="site-footer">
   <small>© 2025 Kitana</small>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
