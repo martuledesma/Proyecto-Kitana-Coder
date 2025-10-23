@@ -46,3 +46,62 @@ main .card {
     }
   }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+// <-- Fin  @keyframes fadeIn
+
+main {
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $espaciado-l;
+    padding: $espaciado-l;
+  }
+  
+  .card {
+    border: none;
+    border-radius: $radio-grande;
+    box-shadow: $sombra-suave;
+    overflow: hidden;
+    transition: $transicion-suave;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-img-top {
+      height: 340px;
+      object-fit: cover;
+      // animación a la imagen del catálogo
+      animation: fadeIn 0.8s ease-out forwards; 
+      
+    }
+
+    .card-body {
+      text-align: center;
+
+      .card-title {
+        font-family: $fuente-titulos;
+        font-size: 1.2rem;
+        color: $gris-oscuro;
+      }
+
+      .precio {
+        color: $rosa;
+        font-weight: bold;
+        margin-bottom: $espaciado-s;
+      }
+
+      .btn-primario {
+        @extend %btn-primario-base;
+        padding: $espaciado-s $espaciado-m;
+      }
+    }
+  }
+}

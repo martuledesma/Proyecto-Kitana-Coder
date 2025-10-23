@@ -1,6 +1,39 @@
 @use "../generales/variables" as *;
-
 @use "sass:color";
+
+
+
+// Animación para aparecer gradualmente
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Animación para deslizarse desde abajo y aparecer
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px); // Empieza 30px por debajo
+    opacity: 0; // Invisible al inicio
+  }
+  to {
+    transform: translateY(0); // Vuelve a su posición normal
+    opacity: 1; // Completamente visible
+  }
+}
+
+// 🚀 NUEVA ANIMACIÓN: Desplazamiento flotante suave
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); } // Se mueve 10px hacia arriba
+  100% { transform: translateY(0px); }
+}
+
+
+
 /* ===== CARRUSEL ===== */
 section.carrusel {
   .carousel-item img {
@@ -15,64 +48,62 @@ section.carrusel {
   }
 }
 
-/* ===== NEW DROP (Optimizado) ===== */
+/* ===== NEW DROP  ===== */
 section.newdrop {
- display: flex;
- align-items: center;
- justify-content: center;
- gap: 40px;
- padding: 40px 20px;
- background: $blanco;
- margin: 28px auto;
- max-width: $ancho-max - 100px;
- border-radius: $radio-grande;
- box-shadow: $sombra-media;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  background: $blanco;
+  margin: 28px auto;
+  max-width: $ancho-max - 100px;
+  border-radius: $radio-grande;
+  box-shadow: $sombra-media;
 
- img {
-  width: 50%;
-  border-radius: 12px;
-  object-fit: cover;
- }
-
- div {
-  flex: 1;
-  text-align: left;
-
-  h2 {
-   font-family: $fuente-titulos;
-   font-size: 36px;
-   margin-bottom: $espaciado-m;
-   color: $rosa;
-   border-bottom: 2px solid $rosa;
-   display: inline-block;
-   padding-bottom: 4px;
+  img {
+    width: 50%;
+    border-radius: 12px;
+    object-fit: cover;
+    //  APLICACIÓN DE LA ANIMACIÓN DE DESPLAZAMIENTO
+    animation: float 6s ease-in-out infinite; // Duración de 4s, suave, infinito
   }
 
-  p {
-   font-size: 18px;
-   line-height: 1.6;
-   color: $gris-oscuro;
- margin-bottom: 20px;
- }
+  div {
+    flex: 1;
+    text-align: left;
 
-.btn-primario {
- @extend %btn-primario-base; // 🚀 ¡Esto es clave!
- }
+    h2 {
+      font-family: $fuente-titulos;
+      font-size: 36px;
+      margin-bottom: $espaciado-m;
+      color: $rosa;
+      border-bottom: 2px solid $rosa;
+      display: inline-block;
+      padding-bottom: 4px;
+      //  Animación: El título de "New Drop" aparece gradualmente
+      animation: fadeIn 1s ease-out 0.3s forwards;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: $gris-oscuro;
+      margin-bottom: 20px;
+    }
+
+    .btn-primario {
+      @extend %btn-primario-base;
+    }
+  }
 }
 
-@media (max-width: 900px) {
- flex-direction: column; text-align: center;
 
- img {
- width: 100%;
-margin-bottom: 16px;
- }
- }
-}
-
-
-// --- Bloque de Marca (Kitana: Moda simple...) + Contacto ---
+// --- Bloque de Marca 
 section.bloque-marca.elegante {
+    //  Animación: Todo el bloque "Kitana" se desliza y aparece
+    animation: slideInUp 0.8s ease-out 0.4s forwards;
+
     max-width: 1100px;
     margin: 42px auto 28px;
     padding: 24px;
@@ -89,7 +120,7 @@ section.bloque-marca.elegante {
     .marca-texto {
         flex: 1 1 360px;
         min-width: 280px;
-        text-align: center; // Lo agregamos aquí para que sea el default en móvil
+        text-align: center; 
 
         .nombre-marca {
             font-family: $fuente-titulos;
@@ -105,15 +136,10 @@ section.bloque-marca.elegante {
             margin: 0 0 $espaciado-m;
         }
 
-        // 🚀 ¡CORRECCIÓN AQUÍ!
-        // Aplicamos todos los estilos de .btn-primario a este botón específico.
-        // Esto le dará el mismo padding, background, color, border-radius y hover.
         .btn-primario {
-            @extend %btn-primario-base; // Usamos un placeholder para extender los estilos base.
-                                       // Definiremos este placeholder a continuación.
-            // Si necesitas algún ajuste específico solo para este botón, lo pones aquí:
-            // Por ejemplo, si tuviera un padding ligeramente diferente:
-            // padding: 12px 20px; 
+            @extend %btn-primario-base;
+            // Animación: El botón "Nueva Colección" se desliza y aparece, con un retraso adicional
+            animation: slideInUp 0.7s ease-out 0.8s forwards;
         }
     }
 
@@ -125,7 +151,7 @@ section.bloque-marca.elegante {
         border: 1px solid $gris-claro;
         border-radius: 14px;
         padding: 18px;
-        text-align: center; // Lo agregamos aquí para que sea el default en móvil
+        text-align: center;
 
         .titulo-contacto {
             margin: 0 0 12px;

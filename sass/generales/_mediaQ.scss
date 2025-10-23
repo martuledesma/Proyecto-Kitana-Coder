@@ -1,135 +1,215 @@
-@use "../generales/variables" as *;
+@use "./variables" as *; // Asegúrate de que tus variables estén definidas aquí.
 
-/* ===================================================
-   📱 MEDIA QUERIES GLOBALES PARA KITANA
-   =================================================== */
 
-/* ===== 🏠 INICIO (index.html) ===== */
-@media (max-width: 900px) {
+
+   //TABLET (≥768px)
+
+
+@media (min-width: $bp-tablet) { 
+
+  // - NAVBAR (Global) -
+  .navbar-nav .nav-link {
+    text-align: left;   
+    padding: 10px 8px; 
+  }
+  .logo { font-size: 28px; } 
+}
+
+
+  // - PÁGINA DE INICIO (index.html) -
   .carrusel .carousel-item img {
-    max-height: 340px;
+    max-height: 550px; // Altura estándar para tablet/desktop
   }
 
   .newdrop {
-    flex-direction: column;
-    text-align: center;
-
+    flex-direction: row;  
+    text-align: left;      
+    gap: 40px;          
     img {
-      width: 100%;
-      margin-bottom: 16px;
+      width: 50%;         // La imagen ocupa la mitad del ancho
+      margin-bottom: 0;   
+      max-height: none;   
     }
   }
 
   .bloque-marca.elegante {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
+    flex-direction: row;  
+    text-align: left;     
+    gap: 28px;            
+    padding: 24px;        
 
     .marca-texto,
     .marca-contacto {
-      min-width: 100%;
+      min-width: auto;    
+    }
+    .marca-contacto .lista-contacto li { 
+        justify-content: flex-start; // Alinea los ítems de contacto a la izquierda
     }
   }
-}
 
-/* ===== 🛍️ CATÁLOGO (catalogo.html) ===== */
-@media (max-width: 900px) {
-  .catalogo {
-    grid-template-columns: 1fr 1fr;
+  //  CATÁLOGO 
+  main .productos-grid {
+    grid-template-columns: repeat(2, 1fr); // 2 columnas para tablet
   }
-}
-
-@media (max-width: 600px) {
-  .catalogo {
-    grid-template-columns: 1fr;
+  main .card .card-img-top {
+    height: 340px; 
+  main .card .card-body .btn-primario {
+    width: auto; 
   }
 
-  .card .card-img-top {
-    height: auto;
-  }
-
-  .card .card-body .btn-primario {
-    width: 100%;
-  }
-}
-
-/* ===== 👩‍👩‍👧 SOBRE NOSOTROS (sobre.html) ===== */
-@media (max-width: 900px) {
+  // SOBRE NOSOTROS 
   .sobre {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;   
+    text-align: left;     
 
-    .sobre-imagen {
-      order: -1;
-      img {
-        width: 90%;
-        margin: 0 auto 20px;
-      }
-    }
+    .sobre-imagen { order: 0; } 
+    .sobre-imagen img { width: auto; margin: 0; } 
   }
-
   .valores-lista {
-    flex-direction: column;
-    align-items: center;
-
-    li {
-      width: 100%;
-      max-width: 360px;
-    }
+    flex-direction: row;   
+    align-items: flex-start;  
+    li { width: auto; max-width: none; }  
   }
-
   .sellos {
-    flex-direction: column;
-    align-items: center;
-
-    .sello {
-      width: 100%;
-      max-width: 380px;
-    }
+    flex-direction: row;   
+    align-items: flex-start;  
+    .sello { width: auto; max-width: none; }  
   }
-}
 
-/* ===== ✉️ CONTACTO (contacto.html) ===== */
-@media (max-width: 900px) {
+  // CONTACTO 
   .contacto {
-    flex-direction: column;
-    text-align: center;
-    gap: 24px;
+    flex-direction: row;   
+    text-align: left;      
+    gap: 28px;             
 
     .contacto-formulario,
-    .contacto-info {
-      width: 100%;
-    }
+    .contacto-info { width: auto; }  
+    .contacto-formulario button { width: auto; }  
+  }
 
-    .contacto-formulario button {
-      width: 100%;
+} // Fin @media (min-width: $bp-tablet)
+
+
+//DESKTOP (≥992px)
+  
+@media (min-width: $bp-desktop) { 
+
+  // PÁGINA DE INICIO 
+  .carrusel .carousel-item img { height: 75vh; } 
+  .newdrop {
+    padding: 4rem 2rem; 
+    img { max-width: 520px; } 
+    div {
+      h2 { font-size: 2.4rem; }
+      p  { font-size: 1.15rem; }
     }
   }
-}
+  .bloque-marca.elegante {
+    max-width: 1100px; 
+  }
 
-/* ===== 🧭 NAVBAR (global) ===== */
-@media (max-width: 768px) {
+  // CATÁLOGO 
+  main .productos-grid {
+    grid-template-columns: repeat(4, 1fr); // 4 columnas para desktop
+    max-width: 1200px; // Limita el ancho del grid en desktop
+    margin: auto;       // Centra el grid
+  }
+
+  // SOBRE NOSOTROS 
+  section.sobre {
+    grid-template-columns: 1.2fr .8fr; 
+    align-items: center;
+    .sobre-texto { h1, p { text-align: left; } }
+  }
+  section.sellos { grid-template-columns: repeat(3, 1fr); } // 3 columnas para sellos
+
+  // CONTACTO
+  section.contacto {
+    flex-direction: row;
+    align-items: flex-start;
+    .contacto-formulario,
+    .contacto-info { flex: 1 1 45%; } // Proporciones de las columnas
+  }
+
+} // Fin @media (min-width: $bp-desktop)
+
+
+
+// DESKTOP GRANDE (≥1400px)
+
+@media (min-width: $bp-desktop-large) { // Ejemplo: $bp-desktop-large: 1400px
+  body { font-size: 18px; }
+  .newdrop { max-width: 1200px; }
+  main .productos-grid { max-width: 1400px; } 
+} // Fin @media (min-width: $bp-desktop-large)
+
+
+
+  // MOBILE OVERRIDES (≤767px)
+  // Estos estilos sobrescriben los estilos base o los de tablet específicamente para móviles pequeños si es necesario.
+
+@media (max-width: $bp-mobile-max) { // Ejemplo: $bp-mobile-max: 767px
+
+  //  NAVBAR (Global) 
   .navbar-nav .nav-link {
     text-align: center;
     padding: 12px 0;
   }
+  .logo { font-size: 24px; }
 
-  .logo {
-    font-size: 24px;
+
+  //  PÁGINA DE INICIO 
+  .carrusel .carousel-item img {
+    height: 380px;         
+    object-fit: cover;
   }
-}
-
-/* ===== 🖥️ DESKTOP LARGE ===== */
-@media (min-width: 1400px) {
-  body {
-    font-size: 18px;
-  }
-
   .newdrop {
-    max-width: 1200px;
+    padding: 15px;  
+    img { max-height: 240px; }  
+  }
+  .bloque-marca.elegante {
+    padding: 15px; 
   }
 
-  .catalogo {
-    max-width: 1200px;
+
+  //  CATÁLOGO  
+  main .productos-grid {
+    grid-template-columns: 1fr; 
+    padding: 15px; 
   }
-}
+  main .card .card-img-top { height: auto; } // Altura auto para imagen en móvil
+  main .card .card-body .btn-primario { width: 100%; } // Botón ocupa todo el ancho
+
+
+  // SOBRE NOSOTROS 
+  .sobre {
+    flex-direction: column;
+    text-align: center;
+    .sobre-imagen { order: -1; }
+    .sobre-imagen img { width: 90%; margin: 0 auto 20px; }
+  }
+  .valores-lista {
+    flex-direction: column;
+    align-items: center;
+    li { width: 100%; max-width: 360px; }
+  }
+  .sellos {
+    flex-direction: column;
+    align-items: center;
+    .sello { width: 100%; max-width: 380px; }
+  }
+
+
+  //  CONTACTO 
+  .contacto {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    .contacto-formulario,
+    .contacto-info { width: 100%; }
+    .contacto-formulario button { width: 100%; }
+  }
+
+} // Fin @media (max-width: $bp-mobile-max)
+
+

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-section.newdrop div .btn-primario, section.bloque-marca.elegante .marca-texto .btn-primario {
+main .card .card-body .btn-primario, section.newdrop div .btn-primario, section.bloque-marca.elegante .marca-texto .btn-primario {
   display: inline-block;
   padding: 0.6rem 1.2rem;
   background: #d6336c;
@@ -9,7 +9,7 @@ section.newdrop div .btn-primario, section.bloque-marca.elegante .marca-texto .b
   font-weight: 700;
   transition: all 0.3s ease;
 }
-section.newdrop div .btn-primario:hover, section.bloque-marca.elegante .marca-texto .btn-primario:hover {
+main .card .card-body .btn-primario:hover, section.newdrop div .btn-primario:hover, section.bloque-marca.elegante .marca-texto .btn-primario:hover {
   background: rgb(186.6808163265, 37.5191836735, 89.68);
 }
 
@@ -70,6 +70,35 @@ footer.site-footer a:hover {
   text-decoration: underline;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 /* ===== CARRUSEL ===== */
 section.carrusel .carousel-item img {
   width: 100%;
@@ -83,7 +112,7 @@ section.carrusel .carousel-item img {
   }
 }
 
-/* ===== NEW DROP (Optimizado) ===== */
+/* ===== NEW DROP  ===== */
 section.newdrop {
   display: flex;
   align-items: center;
@@ -93,13 +122,14 @@ section.newdrop {
   background: #ffffff;
   margin: 28px auto;
   max-width: 1100px;
-  border-radius: 1rem;
+  border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 section.newdrop img {
   width: 50%;
   border-radius: 12px;
   object-fit: cover;
+  animation: float 6s ease-in-out infinite;
 }
 section.newdrop div {
   flex: 1;
@@ -113,6 +143,7 @@ section.newdrop div h2 {
   border-bottom: 2px solid #d6336c;
   display: inline-block;
   padding-bottom: 4px;
+  animation: fadeIn 1s ease-out 0.3s forwards;
 }
 section.newdrop div p {
   font-size: 18px;
@@ -120,18 +151,8 @@ section.newdrop div p {
   color: #444;
   margin-bottom: 20px;
 }
-@media (max-width: 900px) {
-  section.newdrop {
-    flex-direction: column;
-    text-align: center;
-  }
-  section.newdrop img {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-}
-
 section.bloque-marca.elegante {
+  animation: slideInUp 0.8s ease-out 0.4s forwards;
   max-width: 1100px;
   margin: 42px auto 28px;
   padding: 24px;
@@ -160,6 +181,9 @@ section.bloque-marca.elegante .marca-texto .subtitulo-marca {
   color: #777777;
   font-size: 18px;
   margin: 0 0 1rem;
+}
+section.bloque-marca.elegante .marca-texto .btn-primario {
+  animation: slideInUp 0.7s ease-out 0.8s forwards;
 }
 section.bloque-marca.elegante .marca-contacto {
   flex: 1 1 360px;
@@ -213,7 +237,7 @@ section.bloque-marca.elegante .marca-contacto .lista-contacto .icono {
 
 main .card {
   border: none;
-  border-radius: 1rem;
+  border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: all 0.3s ease;
@@ -251,9 +275,52 @@ main .card .card-body .btn-primario:hover {
   background: rgb(186.6808163265, 37.5191836735, 89.68);
 }
 
-/* =========================
-   📬 CONTACTO (base)
-   ========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+main .productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+main .card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+main .card:hover {
+  transform: translateY(-5px);
+}
+main .card .card-img-top {
+  height: 340px;
+  object-fit: cover;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+main .card .card-body {
+  text-align: center;
+}
+main .card .card-body .card-title {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.2rem;
+  color: #444;
+}
+main .card .card-body .precio {
+  color: #d6336c;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+main .card .card-body .btn-primario {
+  padding: 0.5rem 1rem;
+}
+
 section.contacto {
   max-width: 1200px;
   margin: 40px auto;
@@ -270,7 +337,7 @@ section.contacto {
   flex: 1 1 300px;
   background: #ffffff;
   padding: 20px;
-  border-radius: 1rem;
+  border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
@@ -341,79 +408,86 @@ section.contacto {
   text-decoration: underline;
 }
 
-/* Sección principal: texto + imagen */
+/* ===== SECCIÓN PRINCIPAL (SOBRE NOSOTROS) ===== */
 section.sobre {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border: 1px solid #f3f4f6;
   align-items: center;
 }
-section.sobre .sobre-texto,
-section.sobre .sobre-imagen {
-  flex: 1 1 320px;
+section.sobre .sobre-texto {
+  background: #fafafa;
+  padding: 2rem;
+  border-radius: calc(16px - 4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgb(219.6857142857, 222.6285714286, 228.5142857143);
 }
 section.sobre .sobre-texto h1 {
   font-family: "DM Serif Display", serif;
-  font-size: 32px;
-  color: #d6336c;
-  margin-bottom: 16px;
+  font-size: 2.8rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.2;
+  position: relative;
+}
+section.sobre .sobre-texto h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #d6336c;
+  margin: 0.5rem auto 0;
+  border-radius: 30px;
 }
 section.sobre .sobre-texto p {
-  margin-bottom: 14px;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: #444;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+section.sobre .sobre-imagen {
+  text-align: center;
 }
 section.sobre .sobre-imagen img {
-  width: 100%;
-  display: block;
-  border-radius: 14px;
+  max-width: 100%;
+  height: auto;
+  border-radius: calc(16px - 4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-/* Nuestros valores */
-section.valores {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 20px;
-}
-section.valores h2 {
-  font-family: "DM Serif Display", serif;
-  font-size: 26px;
-  margin-bottom: 16px;
-  color: #d6336c;
-}
-section.valores .valores-lista {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-section.valores .valores-lista li {
-  flex: 1 1 220px;
-  background: #ffffff;
-  border: 1px solid #f3f4f6;
-  border-radius: 10px;
-  padding: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  color: #444;
-}
-
-/* Historia (timeline) */
 section.historia {
   max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 section.historia h2 {
   font-family: "DM Serif Display", serif;
-  font-size: 26px;
-  margin-bottom: 16px;
-  color: #d6336c;
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+}
+section.historia h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #d6336c;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 section.historia .timeline {
   list-style: none;
@@ -427,6 +501,8 @@ section.historia .timeline li {
   position: relative;
   padding-left: 12px;
   color: #444;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 section.historia .timeline li::before {
   content: "";
@@ -437,86 +513,324 @@ section.historia .timeline li::before {
   height: 10px;
   background: #d6336c;
   border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 3px #d6336c;
 }
 section.historia .timeline li .t-badge {
   font-weight: 700;
   margin-right: 8px;
   color: #000000;
+  font-size: 1.1rem;
 }
 
-/* Sellos (cards) */
-section.sellos {
+/* ===== VALORES ===== */
+section.valores {
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+section.valores h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 4rem;
+  position: relative;
+}
+section.valores h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #d6336c;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+section.valores .valores-lista {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  align-items: stretch !important;
 }
-section.sellos .sello {
-  flex: 1 1 280px;
+section.valores .valores-lista li {
   background: #ffffff;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  flex: 1 1 90%;
+  max-width: 320px;
+  transition: all 0.3s ease;
   border: 1px solid #f3f4f6;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between !important;
 }
-section.sellos .sello h3 {
-  margin: 0 0 10px;
+section.valores .valores-lista li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+section.valores .valores-lista li h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.5rem;
+  color: #d6336c;
+  margin-bottom: 0.5rem;
+  flex-grow: 0;
+}
+section.valores .valores-lista li p {
+  flex-grow: 1 !important;
+  font-size: 0.95rem;
+  line-height: 1.7;
   color: #444;
-  font-size: 20px;
-}
-section.sellos .sello p {
-  margin: 0;
-  color: rgb(93.5, 93.5, 93.5);
-  line-height: 1.5;
+  margin-bottom: 0;
 }
 
-/* ===================================================
-   📱 MEDIA QUERIES GLOBALES PARA KITANA
-   =================================================== */
-/* ===== 🏠 INICIO (index.html) ===== */
-@media (max-width: 900px) {
+/* ===== SELLOS (Compromisos) ===== */
+section.sellos {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: stretch !important;
+}
+section.sellos h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 4rem;
+  position: relative;
+}
+section.sellos h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #d6336c;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+section.sellos .sello {
+  flex: 1 1 90%;
+  max-width: 300px;
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between !important;
+}
+section.sellos .sello:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+section.sellos .sello img {
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+section.sellos .sello h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.4rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  flex-grow: 0;
+}
+section.sellos .sello p {
+  flex-grow: 1 !important;
+  font-size: 0.9rem;
+  color: rgb(93.5, 93.5, 93.5);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav .nav-link {
+    text-align: left;
+    padding: 10px 8px;
+  }
+  .logo {
+    font-size: 28px;
+  }
+}
+.carrusel .carousel-item img {
+  max-height: 550px;
+}
+
+.newdrop {
+  flex-direction: row;
+  text-align: left;
+  gap: 40px;
+}
+.newdrop img {
+  width: 50%;
+  margin-bottom: 0;
+  max-height: none;
+}
+
+.bloque-marca.elegante {
+  flex-direction: row;
+  text-align: left;
+  gap: 28px;
+  padding: 24px;
+}
+.bloque-marca.elegante .marca-texto,
+.bloque-marca.elegante .marca-contacto {
+  min-width: auto;
+}
+.bloque-marca.elegante .marca-contacto .lista-contacto li {
+  justify-content: flex-start;
+}
+
+main .productos-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+main .card .card-img-top {
+  height: 340px;
+}
+main .card .card-img-top main .card .card-body .btn-primario {
+  width: auto;
+}
+main .card .card-img-top .sobre {
+  flex-direction: row;
+  text-align: left;
+}
+main .card .card-img-top .sobre .sobre-imagen {
+  order: 0;
+}
+main .card .card-img-top .sobre .sobre-imagen img {
+  width: auto;
+  margin: 0;
+}
+main .card .card-img-top .valores-lista {
+  flex-direction: row;
+  align-items: flex-start;
+}
+main .card .card-img-top .valores-lista li {
+  width: auto;
+  max-width: none;
+}
+main .card .card-img-top .sellos {
+  flex-direction: row;
+  align-items: flex-start;
+}
+main .card .card-img-top .sellos .sello {
+  width: auto;
+  max-width: none;
+}
+main .card .card-img-top .contacto {
+  flex-direction: row;
+  text-align: left;
+  gap: 28px;
+}
+main .card .card-img-top .contacto .contacto-formulario,
+main .card .card-img-top .contacto .contacto-info {
+  width: auto;
+}
+main .card .card-img-top .contacto .contacto-formulario button {
+  width: auto;
+}
+
+@media (min-width: 992px) {
   .carrusel .carousel-item img {
-    max-height: 340px;
+    height: 75vh;
   }
   .newdrop {
-    flex-direction: column;
-    text-align: center;
+    padding: 4rem 2rem;
   }
   .newdrop img {
-    width: 100%;
-    margin-bottom: 16px;
+    max-width: 520px;
+  }
+  .newdrop div h2 {
+    font-size: 2.4rem;
+  }
+  .newdrop div p {
+    font-size: 1.15rem;
   }
   .bloque-marca.elegante {
-    flex-direction: column;
+    max-width: 1100px;
+  }
+  main .productos-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    margin: auto;
+  }
+  section.sobre {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+  section.sobre .sobre-texto h1, section.sobre .sobre-texto p {
+    text-align: left;
+  }
+  section.sellos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  section.contacto {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  section.contacto .contacto-formulario,
+  section.contacto .contacto-info {
+    flex: 1 1 45%;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    font-size: 18px;
+  }
+  .newdrop {
+    max-width: 1200px;
+  }
+  main .productos-grid {
+    max-width: 1400px;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-nav .nav-link {
     text-align: center;
-    padding: 20px;
+    padding: 12px 0;
   }
-  .bloque-marca.elegante .marca-texto,
-  .bloque-marca.elegante .marca-contacto {
-    min-width: 100%;
+  .logo {
+    font-size: 24px;
   }
-}
-/* ===== 🛍️ CATÁLOGO (catalogo.html) ===== */
-@media (max-width: 900px) {
-  .catalogo {
-    grid-template-columns: 1fr 1fr;
+  .carrusel .carousel-item img {
+    height: 380px;
+    object-fit: cover;
   }
-}
-@media (max-width: 600px) {
-  .catalogo {
+  .newdrop {
+    padding: 15px;
+  }
+  .newdrop img {
+    max-height: 240px;
+  }
+  .bloque-marca.elegante {
+    padding: 15px;
+  }
+  main .productos-grid {
     grid-template-columns: 1fr;
+    padding: 15px;
   }
-  .card .card-img-top {
+  main .card .card-img-top {
     height: auto;
   }
-  .card .card-body .btn-primario {
+  main .card .card-body .btn-primario {
     width: 100%;
   }
-}
-/* ===== 👩‍👩‍👧 SOBRE NOSOTROS (sobre.html) ===== */
-@media (max-width: 900px) {
   .sobre {
     flex-direction: column;
     text-align: center;
@@ -544,9 +858,6 @@ section.sellos .sello p {
     width: 100%;
     max-width: 380px;
   }
-}
-/* ===== ✉️ CONTACTO (contacto.html) ===== */
-@media (max-width: 900px) {
   .contacto {
     flex-direction: column;
     text-align: center;
@@ -558,28 +869,6 @@ section.sellos .sello p {
   }
   .contacto .contacto-formulario button {
     width: 100%;
-  }
-}
-/* ===== 🧭 NAVBAR (global) ===== */
-@media (max-width: 768px) {
-  .navbar-nav .nav-link {
-    text-align: center;
-    padding: 12px 0;
-  }
-  .logo {
-    font-size: 24px;
-  }
-}
-/* ===== 🖥️ DESKTOP LARGE ===== */
-@media (min-width: 1400px) {
-  body {
-    font-size: 18px;
-  }
-  .newdrop {
-    max-width: 1200px;
-  }
-  .catalogo {
-    max-width: 1200px;
   }
 }
 

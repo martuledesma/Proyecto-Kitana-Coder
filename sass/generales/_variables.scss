@@ -1,8 +1,5 @@
 @use "sass:color";
 
-// ============================
-// 🎨 VARIABLES GLOBALES KITANA
-// ============================
 
 // ----- PALETA PRINCIPAL -----
 $rosa: #d6336c;
@@ -67,3 +64,8 @@ $focus-azul: 0 0 0 3px rgba(17, 70, 143, .15);
         background: $btn-bg-hover; // darken($rosa, 8%)
     }
 }
+$bp-mobile-max: 767px; 
+$bp-tablet: 768px;  
+$bp-desktop: 992px; 
+$bp-desktop-large: 1400px; 
+$radio-grande: 16px;

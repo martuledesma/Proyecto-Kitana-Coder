@@ -1,17 +1,13 @@
 @use "./variables" as *;
 @use "sass:color";
 
-// ============================
-// 🌸 HEADER Y FOOTER KITANA
-// ============================
-
 // ----- HEADER -----
 header {
   // Contenedor principal del Header
   .encabezado {
     position: sticky;
     top: 0;
-    z-index: 1020; // Alto z-index para que la navbar siempre esté encima
+    z-index: 1020; 
   }
 
   // Navbar de Bootstrap
@@ -34,7 +30,6 @@ header {
 
     // Contenedor de los links (ul.navbar-nav)
     .navbar-nav {
-      // Los links de navegación están dentro de <li> y tienen la clase .nav-link
       .nav-item {
         .nav-link {
           color: $gris-oscuro;
@@ -55,7 +50,7 @@ header {
       border: none;
       
       &:focus {
-        box-shadow: $focus-azul; // Sombra de enfoque de la variable
+        box-shadow: $focus-azul; 
       }
     }
   }
@@ -76,7 +71,6 @@ footer.site-footer {
     letter-spacing: .3px;
   }
   
-  // Si hubiera links en el footer
   a {
     color: $rosa;
     text-decoration: none;

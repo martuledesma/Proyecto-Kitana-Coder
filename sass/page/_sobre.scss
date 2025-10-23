@@ -1,147 +1,289 @@
-@use "../generales/variables" as *;
+// sass/page/_sobre.scss
 
+@use "../generales/variables" as *;
 @use "sass:color";
 
 
-/* Sección principal: texto + imagen */
+
+/* ===== SECCIÓN PRINCIPAL (SOBRE NOSOTROS) ===== */
 section.sobre {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: $espaciado-l;
   max-width: $ancho-max;
-  margin: 40px auto;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: center;
+  margin: $espaciado-xl auto; // Centra la sección
+  padding: $espaciado-l;
+  background: $blanco;
+  border-radius: $radio-grande;
+  box-shadow: $sombra-media;
+  border: 1px solid $gris-claro;
+  align-items: center; // Alinea verticalmente los items del grid
 
-  .sobre-texto,
-  .sobre-imagen { flex: 1 1 320px; }
-
-  .sobre-texto {
-    h1 {
+  // Estilos para el bloque de texto
+.sobre-texto {
+  background: $beige-claro;
+  padding: $espaciado-l;
+  border-radius: calc(#{$radio-grande} - 4px);
+  box-shadow: $sombra-suave;
+  border: 1px solid color.adjust($gris-claro, $lightness: -8%); //  Borde gris más oscuro y fino
+    h1 { // Estilo para el título principal "Nuestra Historia"
       font-family: $fuente-titulos;
-      font-size: 32px;
-      color: $rosa;
-      margin-bottom: 16px;
+      font-size: 2.8rem;
+      color: $negro;
+      margin-bottom: $espaciado-m;
+      text-align: center; // Centrado por defecto para móvil
+      line-height: 1.2;
+      position: relative;
+      
+      &::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: $rosa;
+        margin: $espaciado-s auto 0; // Centrado en móvil
+        border-radius: 30px;
+      }
     }
+
     p {
-      margin-bottom: 14px;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.7;
       color: $gris-oscuro;
+      margin-bottom: $espaciado-m;
+      text-align: center; // Centrado por defecto para móvil
     }
   }
 
-  .sobre-imagen img {
-    width: 100%;
-    display: block;
-    border-radius: 14px;
-    box-shadow: $sombra-media;
+
+  .sobre-imagen {
+    text-align: center; // Centra la imagen
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: calc(#{$radio-grande} - 4px); 
+      box-shadow: $sombra-media;
+    }
   }
 }
 
-/* Nuestros valores */
+//HISTORIA (Timeline)  
+section.historia {
+  max-width: $ancho-max - 200px; 
+  margin: $espaciado-xl auto; 
+  padding: $espaciado-l; // Padding alrededor de la sección
+  background: $blanco; // Fondo para que destaque
+  border-radius: $radio-grande; // Bordes redondeados
+  box-shadow: $sombra-media; // Sombra sutil
+
+  h2 { // Título de la línea de tiempo
+    font-family: $fuente-titulos;
+    font-size: 2.5rem; // Tamaño de fuente ajustado para h2
+    color: $negro; // Color del título
+    margin-bottom: $espaciado-xl; 
+    text-align: center; 
+    position: relative;
+      &::after { // Línea decorativa para el h2 de historia
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: $rosa;
+        margin: $espaciado-s auto 0;
+        border-radius: 2px;
+      }
+  }
+
+  .timeline {
+    list-style: none; // Elimina los puntos de lista
+    padding: 0;
+    margin: 0;
+    border-left: 3px solid color.adjust($gris-claro, $lightness: -6%); // La línea vertical
+    padding-left: 20px; // Espacio entre la línea y los items
+
+    li {
+      margin: 16px 0; // Espaciado entre items de la línea de tiempo
+      position: relative;
+      padding-left: 12px; // Espacio para el punto
+      color: $gris-oscuro;
+      font-size: 1.05rem;
+      line-height: 1.6;
+
+      &::before { 
+        content: "";
+        position: absolute;
+        left: -21px; // Ajuste para que el punto esté sobre la línea
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        background: $rosa; // Color del punto
+        border-radius: 50%;
+        border: 2px solid $blanco; // Borde blanco para que destaque
+        box-shadow: 0 0 0 3px $rosa; // Sombra/borde exterior
+      }
+
+      .t-badge { // Para el año o evento destacado
+        font-weight: 700;
+        margin-right: 8px;
+        color: $negro;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+
+/* ===== VALORES ===== */
 section.valores {
-  max-width: $ancho-max - 200px; // ~1000px
-  margin: 30px auto;
-  padding: 20px;
+  max-width: $ancho-max;
+  margin: $espaciado-xl auto;
+  padding: $espaciado-l;
+  text-align: center;
 
   h2 {
     font-family: $fuente-titulos;
-    font-size: 26px;
-    margin-bottom: 16px;
-    color: $rosa;
+    font-size: 2.5rem;
+    color: $negro;
+    margin-bottom: $espaciado-xl;
+    position: relative;
+      &::after { // Línea decorativa para el h2 de valores
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: $rosa;
+        margin: $espaciado-s auto 0;
+        border-radius: 2px;
+      }
   }
 
   .valores-lista {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    justify-content: center;
+    gap: $espaciado-l;
     list-style: none;
-    padding: 0; margin: 0;
-
-    li {
-      flex: 1 1 220px;
+    padding: 0;
+    
+    // --- PROPIEDA PARA LA UNIFORMIDAD EN EL CONTENEDOR ---
+    align-items: stretch !important; 
+    li { // Cada item de valor
       background: $blanco;
+      padding: $espaciado-m;
+      border-radius: $radio-grande;
+      box-shadow: $sombra-suave;
+      flex: 1 1 90%; 
+      max-width: 320px; 
+      transition: $transicion-suave;
       border: 1px solid $gris-claro;
-      border-radius: 10px;
-      padding: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.06);
-      color: $gris-oscuro;
+      text-align: center;
+      
+      // --- PROPIEDADES PARA EL CONTENIDO INTERNO ---
+      display: flex;
+      flex-direction: column; 
+      align-items: center; // Centra h3 y p horizontalmente
+      justify-content: space-between !important; // Distribuye el espacio entre h3 y p
+
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: $sombra-media;
+      }
+
+      h3 {
+        font-family: $fuente-titulos;
+        font-size: 1.5rem;
+        color: $rosa;
+        margin-bottom: $espaciado-s;
+        flex-grow: 0; // Evita que el h3 crezca
+      }
+      p {
+        flex-grow: 1 !important;
+        font-size: 0.95rem;
+        line-height: 1.7; // Ajusta el line-height para una mejor lectura
+        color: $gris-oscuro;
+        margin-bottom: 0; 
+      }
     }
   }
 }
 
-/* Historia (timeline) */
-section.historia {
-  max-width: $ancho-max - 200px;
-  margin: 40px auto;
-  padding: 20px;
+/* ===== SELLOS (Compromisos) ===== */
+section.sellos {
+  max-width: $ancho-max;
+  margin: $espaciado-xl auto;
+  padding: $espaciado-l;
+  text-align: center;
+  
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $espaciado-l; // Espaciado entre los sellos
+  
+  // --- PROPIEDADES PARA LA UNIFORMIDAD ---
+  align-items: stretch !important; 
 
   h2 {
     font-family: $fuente-titulos;
-    font-size: 26px;
-    margin-bottom: 16px;
-    color: $rosa;
-  }
-
-  .timeline {
-    list-style: none;
-    padding: 0; margin: 0;
-    border-left: 3px solid color.adjust($gris-claro, $lightness: -6%);
-    padding-left: 20px;
-
-    li {
-      margin: 16px 0;
-      position: relative;
-      padding-left: 12px;
-      color: $gris-oscuro;
-
-      &::before {
+    font-size: 2.5rem;
+    color: $negro;
+    margin-bottom: $espaciado-xl;
+    position: relative;
+      &::after { // Línea decorativa para el h2 de sellos
         content: "";
-        position: absolute;
-        left: -21px;
-        top: 6px;
-        width: 10px;
-        height: 10px;
+        display: block;
+        width: 80px;
+        height: 4px;
         background: $rosa;
-        border-radius: 50%;
+        margin: $espaciado-s auto 0;
+        border-radius: 2px;
       }
-
-      .t-badge {
-        font-weight: 700;
-        margin-right: 8px;
-        color: $negro;
-      }
-    }
   }
-}
-
-/* Sellos (cards) */
-section.sellos {
-  max-width: $ancho-max;
-  margin: 40px auto;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
 
   .sello {
-    flex: 1 1 280px;
+    flex: 1 1 90%; 
+    max-width: 300px;
     background: $blanco;
     border: 1px solid $gris-claro;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    border-radius: $radio-grande;
+    padding: $espaciado-m;
+    box-shadow: $sombra-suave;
+    transition: $transicion-suave;
+    text-align: center;
+    
+    // --- PROPIEDADES PARA EL CONTENIDO INTERNO ---
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Centra horizontalmente imagen y texto
+    justify-content: space-between !important; 
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $sombra-media;
+    }
+
+    img {
+      max-width: 100px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: $espaciado-s;
+      flex-shrink: 0; // Evita que la imagen se reduzca
+    }
 
     h3 {
-      margin: 0 0 10px;
-      color: $gris-oscuro;
-      font-size: 20px;
+      font-family: $fuente-titulos;
+      font-size: 1.4rem;
+      color: $negro;
+      margin-bottom: $espaciado-s;
+      flex-grow: 0; // Evita que el h3 crezca
     }
 
     p {
-      margin: 0;
+      flex-grow: 1 !important; 
+      font-size: 0.9rem;
       color: color.adjust($gris-oscuro, $lightness: 10%);
       line-height: 1.5;
+      margin: 0; 
     }
   }
 }
