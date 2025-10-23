@@ -1,0 +1,48 @@
+@use "../generales/variables" as *;
+
+main .card {
+  border: none;
+  border-radius: $radio-grande;
+  box-shadow: $sombra-suave;
+  overflow: hidden;
+  transition: $transicion-suave;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-img-top {
+    height: 340px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    text-align: center;
+
+    .card-title {
+      font-family: $fuente-titulos;
+      font-size: 1.2rem;
+      color: $gris-oscuro;
+    }
+
+    .precio {
+      color: $rosa;
+      font-weight: bold;
+      margin-bottom: .5rem;
+    }
+
+    .btn-primario {
+      display: inline-block;
+      background: $btn-bg;
+      color: $btn-color;
+      border-radius: $btn-radio;
+      padding: $btn-padding;
+      text-decoration: none;
+      transition: $transicion-suave;
+
+      &:hover {
+        background: $btn-bg-hover;
+      }
+    }
+  }
+}

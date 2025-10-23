@@ -1,0 +1,86 @@
+@use "../generales/variables" as *;
+
+/* =========================
+   📬 CONTACTO (base)
+   ========================= */
+
+section.contacto {
+  max-width: $ancho-max;     // 1200px por defecto
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;           // permite que se apilen si no entran
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Tarjetas: formulario e info */
+.contacto-formulario,
+.contacto-info {
+  flex: 1 1 300px;           // mínimo 300px, luego crecen
+  background: $blanco;
+  padding: 20px;
+  border-radius: $radio-grande;
+  box-shadow: $sombra-media;
+}
+
+/* Encabezado del formulario */
+.contacto-formulario h1 {
+  color: $rosa;
+  margin-bottom: 16px;
+  font-family: $fuente-titulos;
+  font-size: 28px;
+}
+
+/* Grupos del form */
+.form-group { margin-bottom: 1rem; }
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .35rem;
+  color: $gris-oscuro;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: .5rem .75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: $blanco;
+  color: $gris-oscuro;
+}
+
+/* Botón enviar */
+.contacto-formulario button {
+  width: 100%;
+  padding: 12px;
+  background: $btn-bg;
+  color: $btn-color;
+  border: none;
+  border-radius: $btn-radio;
+  font-size: 16px;
+  cursor: pointer;
+  transition: $transicion-suave;
+
+  &:hover { background: $btn-bg-hover; }
+}
+
+/* Tarjeta de información */
+.contacto-info h2 {
+  font-size: 22px;
+  color: $rosa;
+  margin-bottom: 12px;
+  font-family: $fuente-titulos;
+}
+
+.info-item { margin-bottom: 10px; }
+
+.info-item a {
+  color: $rosa;
+  text-decoration: none;
+  transition: $transicion-suave;
+
+  &:hover { text-decoration: underline; }
+}

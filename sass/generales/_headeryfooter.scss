@@ -1,0 +1,89 @@
+@use "./variables" as *;
+@use "sass:color";
+
+// ============================
+// 🌸 HEADER Y FOOTER KITANA
+// ============================
+
+// ----- HEADER -----
+header {
+  // Contenedor principal del Header
+  .encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 1020; // Alto z-index para que la navbar siempre esté encima
+  }
+
+  // Navbar de Bootstrap
+  nav.navbar {
+    background: $gris-claro !important;
+    box-shadow: $sombra-media; // Sombra para separar de la página
+
+    // Logo Kitana (navbar-brand)
+    .logo {
+      font-family: $fuente-titulos;
+      font-size: 28px;
+      color: $negro;
+      text-decoration: none;
+      transition: $transicion-suave;
+      
+      &:hover { 
+        color: $rosa; 
+      }
+    }
+
+    // Contenedor de los links (ul.navbar-nav)
+    .navbar-nav {
+      // Los links de navegación están dentro de <li> y tienen la clase .nav-link
+      .nav-item {
+        .nav-link {
+          color: $gris-oscuro;
+          font-weight: 600;
+          padding: 10px 8px;
+          transition: $transicion-suave;
+
+          &:hover,
+          &.active {
+            color: $rosa; // Estilo para el link activo o al pasar el mouse
+          }
+        }
+      }
+    }
+    
+    // Estilos para el botón del menú hamburguesa
+    .navbar-toggler {
+      border: none;
+      
+      &:focus {
+        box-shadow: $focus-azul; // Sombra de enfoque de la variable
+      }
+    }
+  }
+}
+
+// ----- FOOTER -----
+footer.site-footer {
+  text-align: center;
+  padding: 16px 12px;
+  border-top: 1px solid color.adjust($gris-claro, $lightness: -2%); // Uso de color.adjust
+  background: $blanco;
+  font-size: 14px;
+  color: $gris-oscuro;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.04);
+  
+  small {
+    display: block;
+    letter-spacing: .3px;
+  }
+  
+  // Si hubiera links en el footer
+  a {
+    color: $rosa;
+    text-decoration: none;
+    font-weight: 600;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

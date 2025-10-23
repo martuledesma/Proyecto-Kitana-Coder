@@ -1,0 +1,147 @@
+@use "../generales/variables" as *;
+
+@use "sass:color";
+
+
+/* Sección principal: texto + imagen */
+section.sobre {
+  max-width: $ancho-max;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+
+  .sobre-texto,
+  .sobre-imagen { flex: 1 1 320px; }
+
+  .sobre-texto {
+    h1 {
+      font-family: $fuente-titulos;
+      font-size: 32px;
+      color: $rosa;
+      margin-bottom: 16px;
+    }
+    p {
+      margin-bottom: 14px;
+      line-height: 1.6;
+      color: $gris-oscuro;
+    }
+  }
+
+  .sobre-imagen img {
+    width: 100%;
+    display: block;
+    border-radius: 14px;
+    box-shadow: $sombra-media;
+  }
+}
+
+/* Nuestros valores */
+section.valores {
+  max-width: $ancho-max - 200px; // ~1000px
+  margin: 30px auto;
+  padding: 20px;
+
+  h2 {
+    font-family: $fuente-titulos;
+    font-size: 26px;
+    margin-bottom: 16px;
+    color: $rosa;
+  }
+
+  .valores-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+    padding: 0; margin: 0;
+
+    li {
+      flex: 1 1 220px;
+      background: $blanco;
+      border: 1px solid $gris-claro;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      color: $gris-oscuro;
+    }
+  }
+}
+
+/* Historia (timeline) */
+section.historia {
+  max-width: $ancho-max - 200px;
+  margin: 40px auto;
+  padding: 20px;
+
+  h2 {
+    font-family: $fuente-titulos;
+    font-size: 26px;
+    margin-bottom: 16px;
+    color: $rosa;
+  }
+
+  .timeline {
+    list-style: none;
+    padding: 0; margin: 0;
+    border-left: 3px solid color.adjust($gris-claro, $lightness: -6%);
+    padding-left: 20px;
+
+    li {
+      margin: 16px 0;
+      position: relative;
+      padding-left: 12px;
+      color: $gris-oscuro;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -21px;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        background: $rosa;
+        border-radius: 50%;
+      }
+
+      .t-badge {
+        font-weight: 700;
+        margin-right: 8px;
+        color: $negro;
+      }
+    }
+  }
+}
+
+/* Sellos (cards) */
+section.sellos {
+  max-width: $ancho-max;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .sello {
+    flex: 1 1 280px;
+    background: $blanco;
+    border: 1px solid $gris-claro;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+
+    h3 {
+      margin: 0 0 10px;
+      color: $gris-oscuro;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0;
+      color: color.adjust($gris-oscuro, $lightness: 10%);
+      line-height: 1.5;
+    }
+  }
+}

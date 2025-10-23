@@ -1,5 +1,5 @@
 /* ===== BASE ===== */
-* { box-sizing: border-box; }
+/** { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -7,7 +7,7 @@ body {
   color: #222;
 }
 
-/* ===== HEADER + NAVBAR ===== */
+/ ===== HEADER + NAVBAR ===== 
 .encabezado { position: sticky; top: 0; z-index: 20; }
 .barra-gris { background: #f3f4f6 !important; }
 .logo {
@@ -24,7 +24,7 @@ body {
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active { color: #d6336c; }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER ===== 
 .site-footer {
   text-align: center;
   padding: 10px 12px;
@@ -34,7 +34,7 @@ body {
   color: #666;
 }
 
-/* ===== INICIO ===== */
+/* ===== INICIO ===== 
 .carrusel .carousel-item img {
   width: 100%;
   height: auto;
@@ -96,7 +96,7 @@ body {
   display: flex;
   gap: 28px;
   align-items: center;
-  flex-wrap: wrap; /* se apila solo en pantallas chicas */
+  flex-wrap: wrap; /* se apila solo en pantallas chicas 
 }
 
 .marca-texto{
@@ -122,7 +122,7 @@ body {
   padding: 10px 18px;
 }
 
-/* Tarjeta de contacto */
+/* Tarjeta de contacto *
 .marca-contacto{
   flex: 1 1 360px;
   min-width: 280px;
@@ -176,7 +176,7 @@ body {
 .lista-contacto a:hover{ text-decoration: underline; }
 
 
-/* ===== CATÁLOGO ===== */
+/* ===== CATÁLOGO ===== *
 .centrado { text-align: center; margin: 22px 0; }
 .catalogo {
   display: grid;
@@ -202,8 +202,24 @@ body {
   object-fit: cover;
 }
 .precio { font-weight: 700; color: #d6336c; }
+/* ====== OVERRIDES CATÁLOGO (cards Bootstrap) ====== *
+.card .card-img-top {
+  width: 100%;
+  aspect-ratio: 4 / 5;  /* proporción vertical uniforme *
+  object-fit: cover;     /* recorta sin deformar 
+  display: block;
+}
 
-/* ===== CONTACTO ===== */
+@supports not (aspect-ratio: 1) {
+  .card .card-img-top { height: 300px; }
+}
+
+.card.h-100 { display: flex; flex-direction: column; }
+.card.h-100 .card-body { display: flex; flex-direction: column; gap: .4rem; }
+.card.h-100 .card-body .btn-primario { margin-top: auto; }
+
+
+/* ===== CONTACTO ===== *
 .contacto {
   max-width: 1100px;
   margin: 40px auto;
@@ -265,7 +281,7 @@ body {
 }
 .info-item a:hover { text-decoration: underline; }
 
-/* ===== SOBRE NOSOTROS ===== */
+/* ===== SOBRE NOSOTROS ===== *
 .sobre {
   max-width: 1100px;
   margin: 40px auto;
@@ -295,7 +311,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,.08);
   display: block;
 }
-/* Valores */
+/* Valores *
 .valores {
   max-width: 1000px;
   margin: 30px auto;
@@ -323,7 +339,7 @@ body {
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
-/* Historia */
+/* Historia *
 .historia {
   max-width: 1000px;
   margin: 40px auto;
@@ -362,7 +378,7 @@ body {
   font-weight: bold;
   margin-right: 8px;
 }
-/* Sellos */
+/* Sellos *
 .sellos {
   max-width: 1100px;
   margin: 40px auto;
@@ -389,7 +405,7 @@ body {
   color: #555;
   line-height: 1.5;
 }
-/* ===== MEDIA QUERY: Index ===== */
+/* ===== MEDIA QUERY: Index ===== *
 @media (max-width: 900px) {
 
   .carrusel .carousel-item img {
@@ -415,7 +431,7 @@ body {
     min-width: 100%;
   }
 }
-/* ===== MEDIA QUERY: Catálogo ===== */
+/* ===== MEDIA QUERY: Catálogo ===== *
 @media (max-width: 900px) {
   .catalogo {
     grid-template-columns: 1fr 1fr; 

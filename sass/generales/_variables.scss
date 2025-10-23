@@ -1,0 +1,69 @@
+@use "sass:color";
+
+// ============================
+// 🎨 VARIABLES GLOBALES KITANA
+// ============================
+
+// ----- PALETA PRINCIPAL -----
+$rosa: #d6336c;
+$rosa-oscuro: color.adjust($rosa, $lightness: -10%);
+$rosa-hover: color.adjust($rosa, $lightness: -8%);
+$azul: #11468F;
+$azul-claro: #2a64c5;
+$gris-oscuro: #444;
+$gris-claro: #f3f4f6;
+$beige-claro: #fafafa;
+$blanco: #ffffff;
+$negro: #000000;
+
+// ----- TIPOGRAFÍA -----
+$fuente-base: Arial, Helvetica, sans-serif;
+$fuente-titulos: "DM Serif Display", serif;
+
+// ----- SOMBRAS Y BORDES -----
+$sombra-suave: 0 8px 24px rgba(0, 0, 0, 0.08);
+$sombra-media: 0 4px 12px rgba(0, 0, 0, 0.12);
+$sombra-fuerte: 0 6px 20px rgba(0, 0, 0, 0.18);
+$radio-base: .5rem;
+$radio-grande: 1rem;
+
+// ----- ESPACIADOS -----
+$espaciado-xs: .25rem;
+$espaciado-s: .5rem;
+$espaciado-m: 1rem;
+$espaciado-l: 2rem;
+$espaciado-xl: 4rem;
+
+// ----- BOTONES -----
+$btn-bg: $rosa;
+$btn-bg-hover: $rosa-hover;
+$btn-color: $blanco;
+$btn-radio: .5rem;
+$btn-padding: .6rem 1.2rem;
+
+// ----- CONTENEDORES -----
+$ancho-max: 1200px;
+$padding-seccion: 2rem 0;
+
+// ----- BREAKPOINTS -----
+$bp-tablet: 768px;
+$bp-desktop: 992px;
+$bp-large: 1200px;
+
+// ----- UTILIDADES -----
+$transicion-suave: all .3s ease;
+$focus-azul: 0 0 0 3px rgba(17, 70, 143, .15);
+%btn-primario-base {
+    display: inline-block;
+    padding: $btn-padding; // .6rem 1.2rem
+    background: $btn-bg; // $rosa
+    color: $btn-color; // $blanco
+    text-decoration: none;
+    border-radius: $btn-radio; // .5rem
+    font-weight: 700;
+    transition: $transicion-suave;
+
+    &:hover { 
+        background: $btn-bg-hover; // darken($rosa, 8%)
+    }
+}

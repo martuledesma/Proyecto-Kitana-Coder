@@ -1,0 +1,135 @@
+@use "../generales/variables" as *;
+
+/* ===================================================
+   📱 MEDIA QUERIES GLOBALES PARA KITANA
+   =================================================== */
+
+/* ===== 🏠 INICIO (index.html) ===== */
+@media (max-width: 900px) {
+  .carrusel .carousel-item img {
+    max-height: 340px;
+  }
+
+  .newdrop {
+    flex-direction: column;
+    text-align: center;
+
+    img {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  }
+
+  .bloque-marca.elegante {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+
+    .marca-texto,
+    .marca-contacto {
+      min-width: 100%;
+    }
+  }
+}
+
+/* ===== 🛍️ CATÁLOGO (catalogo.html) ===== */
+@media (max-width: 900px) {
+  .catalogo {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .catalogo {
+    grid-template-columns: 1fr;
+  }
+
+  .card .card-img-top {
+    height: auto;
+  }
+
+  .card .card-body .btn-primario {
+    width: 100%;
+  }
+}
+
+/* ===== 👩‍👩‍👧 SOBRE NOSOTROS (sobre.html) ===== */
+@media (max-width: 900px) {
+  .sobre {
+    flex-direction: column;
+    text-align: center;
+
+    .sobre-imagen {
+      order: -1;
+      img {
+        width: 90%;
+        margin: 0 auto 20px;
+      }
+    }
+  }
+
+  .valores-lista {
+    flex-direction: column;
+    align-items: center;
+
+    li {
+      width: 100%;
+      max-width: 360px;
+    }
+  }
+
+  .sellos {
+    flex-direction: column;
+    align-items: center;
+
+    .sello {
+      width: 100%;
+      max-width: 380px;
+    }
+  }
+}
+
+/* ===== ✉️ CONTACTO (contacto.html) ===== */
+@media (max-width: 900px) {
+  .contacto {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+
+    .contacto-formulario,
+    .contacto-info {
+      width: 100%;
+    }
+
+    .contacto-formulario button {
+      width: 100%;
+    }
+  }
+}
+
+/* ===== 🧭 NAVBAR (global) ===== */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+}
+
+/* ===== 🖥️ DESKTOP LARGE ===== */
+@media (min-width: 1400px) {
+  body {
+    font-size: 18px;
+  }
+
+  .newdrop {
+    max-width: 1200px;
+  }
+
+  .catalogo {
+    max-width: 1200px;
+  }
+}

@@ -1,0 +1,176 @@
+@use "../generales/variables" as *;
+
+@use "sass:color";
+/* ===== CARRUSEL ===== */
+section.carrusel {
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .carousel-item img { max-height: 340px; }
+  }
+}
+
+/* ===== NEW DROP (Optimizado) ===== */
+section.newdrop {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 40px;
+ padding: 40px 20px;
+ background: $blanco;
+ margin: 28px auto;
+ max-width: $ancho-max - 100px;
+ border-radius: $radio-grande;
+ box-shadow: $sombra-media;
+
+ img {
+  width: 50%;
+  border-radius: 12px;
+  object-fit: cover;
+ }
+
+ div {
+  flex: 1;
+  text-align: left;
+
+  h2 {
+   font-family: $fuente-titulos;
+   font-size: 36px;
+   margin-bottom: $espaciado-m;
+   color: $rosa;
+   border-bottom: 2px solid $rosa;
+   display: inline-block;
+   padding-bottom: 4px;
+  }
+
+  p {
+   font-size: 18px;
+   line-height: 1.6;
+   color: $gris-oscuro;
+ margin-bottom: 20px;
+ }
+
+.btn-primario {
+ @extend %btn-primario-base; // 🚀 ¡Esto es clave!
+ }
+}
+
+@media (max-width: 900px) {
+ flex-direction: column; text-align: center;
+
+ img {
+ width: 100%;
+margin-bottom: 16px;
+ }
+ }
+}
+
+
+// --- Bloque de Marca (Kitana: Moda simple...) + Contacto ---
+section.bloque-marca.elegante {
+    max-width: 1100px;
+    margin: 42px auto 28px;
+    padding: 24px;
+    background: $blanco;
+    border: 1px solid $gris-claro;
+    border-radius: 16px;
+    box-shadow: $sombra-media;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    flex-wrap: wrap; 
+
+    // Estilos del texto (izquierda)
+    .marca-texto {
+        flex: 1 1 360px;
+        min-width: 280px;
+        text-align: center; // Lo agregamos aquí para que sea el default en móvil
+
+        .nombre-marca {
+            font-family: $fuente-titulos;
+            font-size: 44px;
+            line-height: 1.1;
+            color: $negro;
+            margin: 0 0 $espaciado-s;
+        }
+
+        .subtitulo-marca {
+            color: color.adjust($gris-oscuro, $lightness: 20%);
+            font-size: 18px;
+            margin: 0 0 $espaciado-m;
+        }
+
+        // 🚀 ¡CORRECCIÓN AQUÍ!
+        // Aplicamos todos los estilos de .btn-primario a este botón específico.
+        // Esto le dará el mismo padding, background, color, border-radius y hover.
+        .btn-primario {
+            @extend %btn-primario-base; // Usamos un placeholder para extender los estilos base.
+                                       // Definiremos este placeholder a continuación.
+            // Si necesitas algún ajuste específico solo para este botón, lo pones aquí:
+            // Por ejemplo, si tuviera un padding ligeramente diferente:
+            // padding: 12px 20px; 
+        }
+    }
+
+    // Estilos de la tarjeta de contacto (derecha)
+    .marca-contacto {
+        flex: 1 1 360px;
+        min-width: 280px;
+        background: $beige-claro;
+        border: 1px solid $gris-claro;
+        border-radius: 14px;
+        padding: 18px;
+        text-align: center; // Lo agregamos aquí para que sea el default en móvil
+
+        .titulo-contacto {
+            margin: 0 0 12px;
+            font-size: 18px;
+            color: $rosa;
+            font-weight: 700;
+            letter-spacing: .2px;
+        }
+
+        .lista-contacto {
+            list-style: none;
+            padding: 0; margin: 0;
+            display: grid;
+            gap: 10px;
+
+            li {
+                display: grid;
+                grid-template-columns: 26px 1fr;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 8px;
+                border-radius: 10px;
+                transition: $transicion-suave;
+
+                &:hover {
+                    background: color.adjust($gris-claro, $lightness: -2%);
+                }
+                
+                a {
+                    color: $rosa;
+                    text-decoration: none;
+                    font-weight: 600;
+
+                    &:hover { 
+                        text-decoration: underline; 
+                    }
+                }
+            }
+
+            .icono {
+                display: inline-flex;
+                width: 26px;
+                justify-content: center;
+                font-size: 18px;
+            }
+        }
+    }
+}
