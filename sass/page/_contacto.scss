@@ -29,17 +29,18 @@ section.contacto {
 }
 
 /* Grupos del form */
-.form-group { margin-bottom: 1rem; }
+.form-group { margin-bottom: 1rem; } // <-- Selector original
 
-.form-group label {
+.form-group label { // <-- Selector original
   display: block;
   font-weight: 600;
   margin-bottom: .35rem;
   color: $gris-oscuro;
 }
 
+// Selectores originales para input/textarea
 .form-group input,
-.form-group textarea {
+.form-group textarea { 
   width: 100%;
   padding: .5rem .75rem;
   border: 1px solid #ccc;

@@ -190,7 +190,7 @@ section.valores {
         box-shadow: $sombra-media;
       }
 
-      h3 {
+      .valor-titulo { // <-- Clase personalizada para el título de valor (era h3)
         font-family: $fuente-titulos;
         font-size: 1.5rem;
         color: $rosa;
@@ -270,7 +270,7 @@ section.sellos {
       flex-shrink: 0; // Evita que la imagen se reduzca
     }
 
-    h3 {
+    .sello-titulo { // <-- Clase personalizada para el título de sello (era h3)
       font-family: $fuente-titulos;
       font-size: 1.4rem;
       color: $negro;

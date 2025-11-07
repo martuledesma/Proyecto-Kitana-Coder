@@ -8,12 +8,11 @@
 @media (min-width: $bp-tablet) { 
 
   // - NAVBAR (Global) -
-  .navbar-nav .nav-link {
+  .navbar-nav .kitana-nav-link { // <-- Clase personalizada
     text-align: left;   
     padding: 10px 8px; 
   }
   .logo { font-size: 28px; } 
-}
 
 
   // - PÁGINA DE INICIO (index.html) -
@@ -51,9 +50,10 @@
   main .productos-grid {
     grid-template-columns: repeat(2, 1fr); // 2 columnas para tablet
   }
-  main .card .card-img-top {
+  main .kitana-card .card-img-top { // <-- Clase personalizada
     height: 340px; 
-  main .card .card-body .btn-primario {
+  }
+  main .kitana-card .card-body .btn-primario { // <-- Clase personalizada
     width: auto; 
   }
 
@@ -151,7 +151,7 @@
 @media (max-width: $bp-mobile-max) { // Ejemplo: $bp-mobile-max: 767px
 
   //  NAVBAR (Global) 
-  .navbar-nav .nav-link {
+  .navbar-nav .kitana-nav-link { // <-- Clase personalizada
     text-align: center;
     padding: 12px 0;
   }
@@ -177,8 +177,8 @@
     grid-template-columns: 1fr; 
     padding: 15px; 
   }
-  main .card .card-img-top { height: auto; } // Altura auto para imagen en móvil
-  main .card .card-body .btn-primario { width: 100%; } // Botón ocupa todo el ancho
+  main .kitana-card .card-img-top { height: auto; } // <-- Clase personalizada
+  main .kitana-card .card-body .btn-primario { width: 100%; } // <-- Clase personalizada
 
 
   // SOBRE NOSOTROS 
@@ -211,5 +211,3 @@
   }
 
 } // Fin @media (max-width: $bp-mobile-max)
-
-

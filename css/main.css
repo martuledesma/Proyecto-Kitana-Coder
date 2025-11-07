@@ -1,5 +1,5 @@
 @charset "UTF-8";
-main .card .card-body .btn-primario, section.newdrop div .btn-primario, section.bloque-marca.elegante .marca-texto .btn-primario {
+main .kitana-card .card-body .btn-primario, section.newdrop div .btn-primario, section.bloque-marca.elegante .marca-texto .btn-primario {
   display: inline-block;
   padding: 0.6rem 1.2rem;
   background: #d6336c;
@@ -9,7 +9,7 @@ main .card .card-body .btn-primario, section.newdrop div .btn-primario, section.
   font-weight: 700;
   transition: all 0.3s ease;
 }
-main .card .card-body .btn-primario:hover, section.newdrop div .btn-primario:hover, section.bloque-marca.elegante .marca-texto .btn-primario:hover {
+main .kitana-card .card-body .btn-primario:hover, section.newdrop div .btn-primario:hover, section.bloque-marca.elegante .marca-texto .btn-primario:hover {
   background: rgb(186.6808163265, 37.5191836735, 89.68);
 }
 
@@ -18,33 +18,33 @@ header .encabezado {
   top: 0;
   z-index: 1020;
 }
-header nav.navbar {
+header nav.kitana-nav {
   background: #f3f4f6 !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
-header nav.navbar .logo {
+header nav.kitana-nav .logo {
   font-family: "DM Serif Display", serif;
   font-size: 28px;
   color: #000000;
   text-decoration: none;
   transition: all 0.3s ease;
 }
-header nav.navbar .logo:hover {
+header nav.kitana-nav .logo:hover {
   color: #d6336c;
 }
-header nav.navbar .navbar-nav .nav-item .nav-link {
+header nav.kitana-nav .navbar-nav .nav-item .kitana-nav-link {
   color: #444;
   font-weight: 600;
   padding: 10px 8px;
   transition: all 0.3s ease;
 }
-header nav.navbar .navbar-nav .nav-item .nav-link:hover, header nav.navbar .navbar-nav .nav-item .nav-link.active {
+header nav.kitana-nav .navbar-nav .nav-item .kitana-nav-link:hover, header nav.kitana-nav .navbar-nav .nav-item .kitana-nav-link.active {
   color: #d6336c;
 }
-header nav.navbar .navbar-toggler {
+header nav.kitana-nav .navbar-toggler {
   border: none;
 }
-header nav.navbar .navbar-toggler:focus {
+header nav.kitana-nav .navbar-toggler:focus {
   box-shadow: 0 0 0 3px rgba(17, 70, 143, 0.15);
 }
 
@@ -235,46 +235,6 @@ section.bloque-marca.elegante .marca-contacto .lista-contacto .icono {
   font-size: 18px;
 }
 
-main .card {
-  border: none;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-main .card:hover {
-  transform: translateY(-5px);
-}
-main .card .card-img-top {
-  height: 340px;
-  object-fit: cover;
-}
-main .card .card-body {
-  text-align: center;
-}
-main .card .card-body .card-title {
-  font-family: "DM Serif Display", serif;
-  font-size: 1.2rem;
-  color: #444;
-}
-main .card .card-body .precio {
-  color: #d6336c;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-main .card .card-body .btn-primario {
-  display: inline-block;
-  background: #d6336c;
-  color: #ffffff;
-  border-radius: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-main .card .card-body .btn-primario:hover {
-  background: rgb(186.6808163265, 37.5191836735, 89.68);
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -289,35 +249,35 @@ main .productos-grid {
   gap: 2rem;
   padding: 2rem;
 }
-main .card {
+main .kitana-card {
   border: none;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: all 0.3s ease;
 }
-main .card:hover {
+main .kitana-card:hover {
   transform: translateY(-5px);
 }
-main .card .card-img-top {
+main .kitana-card .card-img-top {
   height: 340px;
   object-fit: cover;
   animation: fadeIn 0.8s ease-out forwards;
 }
-main .card .card-body {
+main .kitana-card .card-body {
   text-align: center;
 }
-main .card .card-body .card-title {
+main .kitana-card .card-body .card-title {
   font-family: "DM Serif Display", serif;
   font-size: 1.2rem;
   color: #444;
 }
-main .card .card-body .precio {
+main .kitana-card .card-body .precio {
   color: #d6336c;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
-main .card .card-body .btn-primario {
+main .kitana-card .card-body .btn-primario {
   padding: 0.5rem 1rem;
 }
 
@@ -574,7 +534,7 @@ section.valores .valores-lista li:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
-section.valores .valores-lista li h3 {
+section.valores .valores-lista li .valor-titulo {
   font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
   color: #d6336c;
@@ -643,7 +603,7 @@ section.sellos .sello img {
   margin-bottom: 0.5rem;
   flex-shrink: 0;
 }
-section.sellos .sello h3 {
+section.sellos .sello .sello-titulo {
   font-family: "DM Serif Display", serif;
   font-size: 1.4rem;
   color: #000000;
@@ -659,93 +619,88 @@ section.sellos .sello p {
 }
 
 @media (min-width: 768px) {
-  .navbar-nav .nav-link {
+  .navbar-nav .kitana-nav-link {
     text-align: left;
     padding: 10px 8px;
   }
   .logo {
     font-size: 28px;
   }
+  .carrusel .carousel-item img {
+    max-height: 550px;
+  }
+  .newdrop {
+    flex-direction: row;
+    text-align: left;
+    gap: 40px;
+  }
+  .newdrop img {
+    width: 50%;
+    margin-bottom: 0;
+    max-height: none;
+  }
+  .bloque-marca.elegante {
+    flex-direction: row;
+    text-align: left;
+    gap: 28px;
+    padding: 24px;
+  }
+  .bloque-marca.elegante .marca-texto,
+  .bloque-marca.elegante .marca-contacto {
+    min-width: auto;
+  }
+  .bloque-marca.elegante .marca-contacto .lista-contacto li {
+    justify-content: flex-start;
+  }
+  main .productos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  main .kitana-card .card-img-top {
+    height: 340px;
+  }
+  main .kitana-card .card-body .btn-primario {
+    width: auto;
+  }
+  .sobre {
+    flex-direction: row;
+    text-align: left;
+  }
+  .sobre .sobre-imagen {
+    order: 0;
+  }
+  .sobre .sobre-imagen img {
+    width: auto;
+    margin: 0;
+  }
+  .valores-lista {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .valores-lista li {
+    width: auto;
+    max-width: none;
+  }
+  .sellos {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .sellos .sello {
+    width: auto;
+    max-width: none;
+  }
+  .contacto {
+    flex-direction: row;
+    text-align: left;
+    gap: 28px;
+  }
+  .contacto .contacto-formulario,
+  .contacto .contacto-info {
+    width: auto;
+  }
+  .contacto .contacto-formulario button {
+    width: auto;
+  }
 }
-.carrusel .carousel-item img {
-  max-height: 550px;
-}
-
-.newdrop {
-  flex-direction: row;
-  text-align: left;
-  gap: 40px;
-}
-.newdrop img {
-  width: 50%;
-  margin-bottom: 0;
-  max-height: none;
-}
-
-.bloque-marca.elegante {
-  flex-direction: row;
-  text-align: left;
-  gap: 28px;
-  padding: 24px;
-}
-.bloque-marca.elegante .marca-texto,
-.bloque-marca.elegante .marca-contacto {
-  min-width: auto;
-}
-.bloque-marca.elegante .marca-contacto .lista-contacto li {
-  justify-content: flex-start;
-}
-
-main .productos-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-main .card .card-img-top {
-  height: 340px;
-}
-main .card .card-img-top main .card .card-body .btn-primario {
-  width: auto;
-}
-main .card .card-img-top .sobre {
-  flex-direction: row;
-  text-align: left;
-}
-main .card .card-img-top .sobre .sobre-imagen {
-  order: 0;
-}
-main .card .card-img-top .sobre .sobre-imagen img {
-  width: auto;
-  margin: 0;
-}
-main .card .card-img-top .valores-lista {
-  flex-direction: row;
-  align-items: flex-start;
-}
-main .card .card-img-top .valores-lista li {
-  width: auto;
-  max-width: none;
-}
-main .card .card-img-top .sellos {
-  flex-direction: row;
-  align-items: flex-start;
-}
-main .card .card-img-top .sellos .sello {
-  width: auto;
-  max-width: none;
-}
-main .card .card-img-top .contacto {
-  flex-direction: row;
-  text-align: left;
-  gap: 28px;
-}
-main .card .card-img-top .contacto .contacto-formulario,
-main .card .card-img-top .contacto .contacto-info {
-  width: auto;
-}
-main .card .card-img-top .contacto .contacto-formulario button {
-  width: auto;
-}
-
 @media (min-width: 992px) {
   .carrusel .carousel-item img {
     height: 75vh;
@@ -801,7 +756,7 @@ main .card .card-img-top .contacto .contacto-formulario button {
   }
 }
 @media (max-width: 767px) {
-  .navbar-nav .nav-link {
+  .navbar-nav .kitana-nav-link {
     text-align: center;
     padding: 12px 0;
   }
@@ -825,10 +780,10 @@ main .card .card-img-top .contacto .contacto-formulario button {
     grid-template-columns: 1fr;
     padding: 15px;
   }
-  main .card .card-img-top {
+  main .kitana-card .card-img-top {
     height: auto;
   }
-  main .card .card-body .btn-primario {
+  main .kitana-card .card-body .btn-primario {
     width: 100%;
   }
   .sobre {

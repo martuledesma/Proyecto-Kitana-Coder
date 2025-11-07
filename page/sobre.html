@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kitana — Sobre nosotros</title>
 
-  <!-- Bootstrap solo para el navbar -->
+  <meta name="description" content="Conocé la historia de Kitana, el proyecto de moda local de Tucumán. Nos enfocamos en ropa cómoda, procesos responsables, comercio justo y diseño consciente.">
+  <meta name="keywords" content="historia Kitana, moda local Tucumán, ropa sostenible, diseño consciente, cruelty free, producción local argentina, valores de marca">
+
+  <link rel="icon" href="../medios/icono.png" type="image/png">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- CSS main modificado -->
-<link rel="stylesheet" href="../css/main.css"/>
-  <!-- Fuente -->
+  <link rel="stylesheet" href="../css/main.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
@@ -17,7 +19,7 @@
 <body>
 
 <header class="encabezado">
-  <nav class="navbar navbar-expand-lg bg-light w-100 barra-gris">
+  <nav class="navbar navbar-expand-lg bg-light w-100 barra-gris kitana-nav">
     <div class="container-fluid nav-wrap">
       <a class="navbar-brand logo" href="../index.html">Kitana</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal">
@@ -25,9 +27,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navPrincipal">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
-          <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link kitana-nav-link" href="catalogo.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link kitana-nav-link active" href="sobre.html">Sobre nosotros</a></li>
+          <li class="nav-item"><a class="nav-link kitana-nav-link" href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </div>
@@ -35,7 +37,6 @@
 </header>
 
 <main>
-  <!-- Sección principal -->
   <section class="sobre">
     <div class="sobre-texto">
       <h1>Sobre nosotros</h1>
@@ -44,22 +45,20 @@
       <p>Creemos en el consumo responsable, el comercio justo y el diseño consciente.</p>
     </div>
     <div class="sobre-imagen">
-      <img src="../medios/foto2girls.jpg" alt="Equipo Kitana">
+      <img src="../medios/foto2girls.jpg" alt="Equipo Kitana, modelos.">
     </div>
   </section>
 
-  <!-- Nuestros valores -->
   <section class="valores">
     <h2>Nuestros valores</h2>
     <ul class="valores-lista">
-      <li></strong>Simpleza y comodidad</strong></li>
-      <li></strong>Calidad y precio justo</li>
-      <li></strong>Producción local</li>
-      <li></strong>Atención cercana</li>
+      <li><h3 class="valor-titulo">Simpleza y comodidad</h3></li>
+      <li><h3 class="valor-titulo">Calidad y precio justo</h3></li>
+      <li><h3 class="valor-titulo">Producción local</h3></li>
+      <li><h3 class="valor-titulo">Atención cercana</h3></li>
     </ul>
   </section>
 
-  <!-- Historia -->
   <section class="historia">
     <h2>Nuestra historia</h2>
     <ol class="timeline">
@@ -69,18 +68,17 @@
     </ol>
   </section>
 
-  <!-- Sellos -->
   <section class="sellos">
     <article class="sello">
-      <h3></strong>Cruelty free / Vegana</strong></h3>
+      <h3 class="sello-titulo">Cruelty free / Vegana</h3>
       <p>Priorizamos procesos libres de crueldad y materiales veganos cuando es posible.</p>
     </article>
     <article class="sello">
-      <h3></strong>Responsabilidad ambiental</strong></h3>
+      <h3 class="sello-titulo">Responsabilidad ambiental</h3>
       <p>Diseños conscientes, tiradas cuidadas y selección de insumos para reducir impacto.</p>
     </article>
     <article class="sello">
-      <h3></strong>Seguridad y calidad</strong></h3>
+      <h3 class="sello-titulo">Seguridad y calidad</h3>
       <p>Controles en la confección y terminaciones para prendas duraderas y seguras.</p>
     </article>
   </section>

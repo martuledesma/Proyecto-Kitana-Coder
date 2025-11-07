@@ -10,8 +10,8 @@ header {
     z-index: 1020; 
   }
 
-  // Navbar de Bootstrap
-  nav.navbar {
+  // Navbar de Bootstrap (Usamos una clase personalizada para aplicar estilos)
+  nav.kitana-nav { // <-- Clase personalizada para el nav
     background: $gris-claro !important;
     box-shadow: $sombra-media; // Sombra para separar de la página
 
@@ -31,7 +31,7 @@ header {
     // Contenedor de los links (ul.navbar-nav)
     .navbar-nav {
       .nav-item {
-        .nav-link {
+        .kitana-nav-link { // <-- Clase personalizada para los links
           color: $gris-oscuro;
           font-weight: 600;
           padding: 10px 8px;
