@@ -11,7 +11,7 @@ section.sobre {
   grid-template-columns: 1fr; 
   gap: $espaciado-l;
   max-width: $ancho-max;
-  margin: $espaciado-xl auto; // Centra la sección
+  margin: $espaciado-xl auto; 
   padding: $espaciado-l;
   background: $blanco;
   border-radius: $radio-grande;
@@ -31,7 +31,7 @@ section.sobre {
       font-size: 2.8rem;
       color: $negro;
       margin-bottom: $espaciado-m;
-      text-align: center; // Centrado por defecto para móvil
+      text-align: center; 
       line-height: 1.2;
       position: relative;
       
@@ -41,8 +41,7 @@ section.sobre {
         width: 80px;
         height: 4px;
         background: $rosa;
-        margin: $espaciado-s auto 0; // Centrado en móvil
-        border-radius: 30px;
+        margin: $espaciado-s auto 0; 
       }
     }
 
@@ -57,7 +56,7 @@ section.sobre {
 
 
   .sobre-imagen {
-    text-align: center; // Centra la imagen
+    text-align: center; 
     img {
       max-width: 100%;
       height: auto;
@@ -78,12 +77,12 @@ section.historia {
 
   h2 { // Título de la línea de tiempo
     font-family: $fuente-titulos;
-    font-size: 2.5rem; // Tamaño de fuente ajustado para h2
-    color: $negro; // Color del título
+    font-size: 2.5rem; 
+    color: $negro; 
     margin-bottom: $espaciado-xl; 
     text-align: center; 
     position: relative;
-      &::after { // Línea decorativa para el h2 de historia
+      &::after { 
         content: "";
         display: block;
         width: 80px;
@@ -95,16 +94,16 @@ section.historia {
   }
 
   .timeline {
-    list-style: none; // Elimina los puntos de lista
+    list-style: none; 
     padding: 0;
     margin: 0;
-    border-left: 3px solid color.adjust($gris-claro, $lightness: -6%); // La línea vertical
-    padding-left: 20px; // Espacio entre la línea y los items
+    border-left: 3px solid color.adjust($gris-claro, $lightness: -6%); 
+    padding-left: 20px; 
 
     li {
-      margin: 16px 0; // Espaciado entre items de la línea de tiempo
+      margin: 16px 0; 
       position: relative;
-      padding-left: 12px; // Espacio para el punto
+      padding-left: 12px; 
       color: $gris-oscuro;
       font-size: 1.05rem;
       line-height: 1.6;
@@ -112,17 +111,17 @@ section.historia {
       &::before { 
         content: "";
         position: absolute;
-        left: -21px; // Ajuste para que el punto esté sobre la línea
+        left: -21px; 
         top: 6px;
         width: 10px;
         height: 10px;
-        background: $rosa; // Color del punto
+        background: $rosa; 
         border-radius: 50%;
-        border: 2px solid $blanco; // Borde blanco para que destaque
-        box-shadow: 0 0 0 3px $rosa; // Sombra/borde exterior
+        border: 2px solid $blanco; 
+        box-shadow: 0 0 0 3px $rosa; 
       }
 
-      .t-badge { // Para el año o evento destacado
+      .t-badge { 
         font-weight: 700;
         margin-right: 8px;
         color: $negro;
@@ -146,7 +145,7 @@ section.valores {
     color: $negro;
     margin-bottom: $espaciado-xl;
     position: relative;
-      &::after { // Línea decorativa para el h2 de valores
+      &::after {
         content: "";
         display: block;
         width: 80px;
@@ -167,7 +166,7 @@ section.valores {
     
     // --- PROPIEDA PARA LA UNIFORMIDAD EN EL CONTENEDOR ---
     align-items: stretch !important; 
-    li { // Cada item de valor
+    li {
       background: $blanco;
       padding: $espaciado-m;
       border-radius: $radio-grande;
@@ -181,8 +180,8 @@ section.valores {
       // --- PROPIEDADES PARA EL CONTENIDO INTERNO ---
       display: flex;
       flex-direction: column; 
-      align-items: center; // Centra h3 y p horizontalmente
-      justify-content: space-between !important; // Distribuye el espacio entre h3 y p
+      align-items: center; 
+      justify-content: space-between !important; 
 
 
       &:hover {
@@ -190,17 +189,17 @@ section.valores {
         box-shadow: $sombra-media;
       }
 
-      .valor-titulo { // <-- Clase personalizada para el título de valor (era h3)
+      .valor-titulo { 
         font-family: $fuente-titulos;
         font-size: 1.5rem;
         color: $rosa;
         margin-bottom: $espaciado-s;
-        flex-grow: 0; // Evita que el h3 crezca
+        flex-grow: 0; 
       }
       p {
         flex-grow: 1 !important;
         font-size: 0.95rem;
-        line-height: 1.7; // Ajusta el line-height para una mejor lectura
+        line-height: 1.7; 
         color: $gris-oscuro;
         margin-bottom: 0; 
       }
@@ -218,9 +217,9 @@ section.sellos {
   display: flex; 
   flex-wrap: wrap;
   justify-content: center;
-  gap: $espaciado-l; // Espaciado entre los sellos
+  gap: $espaciado-l; 
   
-  // --- PROPIEDADES PARA LA UNIFORMIDAD ---
+
   align-items: stretch !important; 
 
   h2 {
@@ -229,7 +228,7 @@ section.sellos {
     color: $negro;
     margin-bottom: $espaciado-xl;
     position: relative;
-      &::after { // Línea decorativa para el h2 de sellos
+      &::after { 
         content: "";
         display: block;
         width: 80px;
@@ -254,7 +253,7 @@ section.sellos {
     // --- PROPIEDADES PARA EL CONTENIDO INTERNO ---
     display: flex;
     flex-direction: column;
-    align-items: center; // Centra horizontalmente imagen y texto
+    align-items: center; 
     justify-content: space-between !important; 
 
     &:hover {
@@ -267,15 +266,15 @@ section.sellos {
       height: auto;
       object-fit: contain;
       margin-bottom: $espaciado-s;
-      flex-shrink: 0; // Evita que la imagen se reduzca
+      flex-shrink: 0; 
     }
 
-    .sello-titulo { // <-- Clase personalizada para el título de sello (era h3)
+    .sello-titulo { 
       font-family: $fuente-titulos;
       font-size: 1.4rem;
       color: $negro;
       margin-bottom: $espaciado-s;
-      flex-grow: 0; // Evita que el h3 crezca
+      flex-grow: 0; 
     }
 
     p {

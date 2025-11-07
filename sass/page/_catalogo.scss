@@ -17,7 +17,7 @@ main {
     padding: $espaciado-l;
   }
   
-  .kitana-card { // <-- AHORA CORRECTO: Solo apunta a tu clase personalizada
+  .kitana-card { 
     border: none;
     border-radius: $radio-grande;
     box-shadow: $sombra-suave;

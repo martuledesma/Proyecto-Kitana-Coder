@@ -1,11 +1,11 @@
 @use "../generales/variables" as *;
 
 section.contacto {
-  max-width: $ancho-max;     // 1200px por defecto
+  max-width: $ancho-max;     
   margin: 40px auto;
   padding: 20px;
   display: flex;
-  flex-wrap: wrap;           // permite que se apilen si no entran
+  flex-wrap: wrap;           
   gap: 40px;
   align-items: flex-start;
 }
@@ -13,7 +13,7 @@ section.contacto {
 /* Tarjetas: formulario e info */
 .contacto-formulario,
 .contacto-info {
-  flex: 1 1 300px;           // mínimo 300px, luego crecen
+  flex: 1 1 300px;           
   background: $blanco;
   padding: 20px;
   border-radius: $radio-grande;
@@ -29,9 +29,9 @@ section.contacto {
 }
 
 /* Grupos del form */
-.form-group { margin-bottom: 1rem; } // <-- Selector original
+.form-group { margin-bottom: 1rem; } 
 
-.form-group label { // <-- Selector original
+.form-group label {
   display: block;
   font-weight: 600;
   margin-bottom: .35rem;

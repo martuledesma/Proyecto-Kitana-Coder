@@ -16,19 +16,19 @@
 // Animación para deslizarse desde abajo y aparecer
 @keyframes slideInUp {
   from {
-    transform: translateY(30px); // Empieza 30px por debajo
-    opacity: 0; // Invisible al inicio
+    transform: translateY(30px); 
+    opacity: 0; 
   }
   to {
-    transform: translateY(0); // Vuelve a su posición normal
-    opacity: 1; // Completamente visible
+    transform: translateY(0); 
+    opacity: 1; 
   }
 }
 
 // 🚀 NUEVA ANIMACIÓN: Desplazamiento flotante suave
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); } // Se mueve 10px hacia arriba
+  50% { transform: translateY(-10px); } 
   100% { transform: translateY(0px); }
 }
 
@@ -67,7 +67,7 @@ section.newdrop {
     border-radius: 12px;
     object-fit: cover;
     //  APLICACIÓN DE LA ANIMACIÓN DE DESPLAZAMIENTO
-    animation: float 6s ease-in-out infinite; // Duración de 4s, suave, infinito
+    animation: float 6s ease-in-out infinite; 
   }
 
   div {
@@ -139,7 +139,7 @@ section.bloque-marca.elegante {
 
         .btn-primario {
             @extend %btn-primario-base;
-            // Animación: El botón "Nueva Colección" se desliza y aparece, con un retraso adicional
+      
             animation: slideInUp 0.7s ease-out 0.8s forwards;
         }
     }
